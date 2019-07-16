@@ -35,7 +35,6 @@ export default function RecipeReviewCard() {
       <CardContent>
         <Typography
           variant="body2"
-          color="textSecondary"
           component="p"
           align="center"
           transform="capitalize"

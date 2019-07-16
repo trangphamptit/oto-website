@@ -1,5 +1,4 @@
 import React from 'react';
-import Button from '@material-ui/core/Button';
 import { makeStyles, createStyles } from '@material-ui/core/styles';
 import Product from '../../components/Product';
 import Header from '../../components/Header';
@@ -13,7 +12,6 @@ const useStyles = makeStyles(theme => {
 });
 
 const HomePage = () => {
-  const classes = useStyles();
   return (
     <div>
       <Header />

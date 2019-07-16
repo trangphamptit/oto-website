@@ -25,7 +25,6 @@ import MailIcon from '@material-ui/icons/Mail';
 import Drawer from '@material-ui/core/Drawer';
 import Divider from '@material-ui/core/Divider';
 import List from '@material-ui/core/List';
-import clsx from 'clsx';
 
 const drawerWidth = 240;
 
