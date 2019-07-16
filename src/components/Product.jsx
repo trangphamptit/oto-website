@@ -1,47 +1,84 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
-import Button from '@material-ui/core/Button';
+import CardContent from '@material-ui/core/CardContent';
+import CardActions from '@material-ui/core/CardActions';
+import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
-import { ShoppingCart } from '@material-ui/icons';
-
-const useStyles = makeStyles({
+import { red } from '@material-ui/core/colors';
+import FavoriteIcon from '@material-ui/icons/Favorite';
+import ShareIcon from '@material-ui/icons/Share';
+import Button from '@material-ui/core/Button';
+const useStyles = makeStyles(theme => ({
   card: {
     maxWidth: 345,
-    maxHeight: 350,
   },
-});
+  media: {
+    height: 0,
+    paddingTop: '56.25%', // 16:9
+  },
+  avatar: {
+    backgroundColor: red[500],
+  },
+}));
 
-export default function ImgMediaCard() {
+export default function RecipeReviewCard() {
   const classes = useStyles();
-
   return (
     <Card className={classes.card}>
-      <CardActionArea>
-        <CardMedia
-          component="img"
-          alt="Phụ tùng ô tô"
-          height="200"
-          image="https://proxy.duckduckgo.com/iu/?u=http%3A%2F%2Fimg.playbuzz.com%2Fimage%2Fupload%2Ff_auto%2Cfl_lossy%2Cq_auto%2Fcdn%2Fa5335fac-2762-47e5-8d50-e23597c9c398%2Ffa7eb98a-c98e-4b51-ad43-412515de1288.jpg&f=1"
-          title="Phụ tùng ô tô"
-        />
-        <CardContent>
-          <Typography variant="h6" component="h2">
-            Phụ tùng ô tô
-          </Typography>
-          <Typography variant="h6" component="p" align="center">
-            30000 đ
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-      <CardActions>
-        <Button size="large" color="primary" fullWidth>
-          <ShoppingCart />
+      <CardMedia
+        className={classes.media}
+        image="https://salt.tikicdn.com/cache/200x200/ts/product/96/28/56/2687a225560aadd25efd2150da4f7fd2.jpg"
+        title="búa thoát hiểm đa năng"
+      />
+      <CardContent>
+        <Typography
+          variant="body2"
+          color="textSecondary"
+          component="p"
+          align="center"
+          transform="capitalize"
+          color="black"
+        >
+          Búa thoát hiểm đa năng
+        </Typography>
+        <Typography
+          variant="body2"
+          color="textSecondary"
+          component="p"
+          align="center"
+        >
+          98.000 đ
+        </Typography>
+        <Typography
+          variant="body2"
+          color="textSecondary"
+          component="p"
+          align="center"
+          style={{ textDecoration: 'line-through' }}
+        >
+          180.000 đ
+        </Typography>
+      </CardContent>
+      <CardActions
+        disableSpacing
+        style={{
+          display: 'flex',
+          justifyContent: ' space-between',
+          // visibility: 'hidden',
+        }}
+        className={classes.cardContent}
+      >
+        <IconButton aria-label="Add to favorites">
+          <FavoriteIcon />
+        </IconButton>
+        <Button variant="contained" color="primary" className={classes.button}>
+          Add to cart
         </Button>
+        <IconButton aria-label="Share">
+          <ShareIcon />
+        </IconButton>
       </CardActions>
     </Card>
   );
