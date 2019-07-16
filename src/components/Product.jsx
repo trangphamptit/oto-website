@@ -4,12 +4,10 @@ import Card from '@material-ui/core/Card';
 import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
 import CardActions from '@material-ui/core/CardActions';
-import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import { red } from '@material-ui/core/colors';
-import FavoriteIcon from '@material-ui/icons/Favorite';
-import ShareIcon from '@material-ui/icons/Share';
 import Button from '@material-ui/core/Button';
+
 const useStyles = makeStyles(theme => ({
   card: {
     maxWidth: 345,
@@ -23,13 +21,13 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function RecipeReviewCard() {
+export default function Product(props) {
   const classes = useStyles();
   return (
     <Card className={classes.card}>
       <CardMedia
         className={classes.media}
-        image="https://salt.tikicdn.com/cache/200x200/ts/product/96/28/56/2687a225560aadd25efd2150da4f7fd2.jpg"
+        image={props.image}
         title="búa thoát hiểm đa năng"
       />
       <CardContent>
@@ -40,7 +38,7 @@ export default function RecipeReviewCard() {
           transform="capitalize"
           color="black"
         >
-          Búa thoát hiểm đa năng
+          {props.productname}
         </Typography>
         <Typography
           variant="body2"
@@ -48,7 +46,7 @@ export default function RecipeReviewCard() {
           component="p"
           align="center"
         >
-          98.000 đ
+          {props.discountprice} đ
         </Typography>
         <Typography
           variant="body2"
@@ -57,28 +55,28 @@ export default function RecipeReviewCard() {
           align="center"
           style={{ textDecoration: 'line-through' }}
         >
-          180.000 đ
+          {props.price} đ
         </Typography>
       </CardContent>
-      <CardActions
-        disableSpacing
-        style={{
-          display: 'flex',
-          justifyContent: ' space-between',
-          // visibility: 'hidden',
-        }}
-        className={classes.cardContent}
-      >
-        <IconButton aria-label="Add to favorites">
-          <FavoriteIcon />
-        </IconButton>
-        <Button variant="contained" color="primary" className={classes.button}>
+      <CardActions disableSpacing className={classes.cardContent}>
+        <Button
+          variant="contained"
+          color="primary"
+          className={classes.button}
+          style={{
+            margin: 'auto',
+          }}
+        >
           Add to cart
         </Button>
-        <IconButton aria-label="Share">
-          <ShareIcon />
-        </IconButton>
       </CardActions>
     </Card>
   );
 }
+Product.defaultProps = {
+  image:
+    'https://salt.tikicdn.com/cache/200x200/ts/product/96/28/56/2687a225560aadd25efd2150da4f7fd2.jpg',
+  productname: 'búa thoát hiểm đa năng',
+  discountprice: '98.000',
+  price: '1800.000',
+};
