@@ -132,7 +132,7 @@ function useMenu() {
   }
 
   function handleMobileMenuOpen(event) {
-    console.log('Hello');
+    // console.log('Hello');
     setAnchorEl(event.currentTarget);
   }
 
