@@ -18,17 +18,29 @@ const useStyles = makeStyles(theme => ({
 
 export default function Products() {
   return (
-    <Grid container justify="center" spacing={2}>
-      <Grid item xs={4}>
+    <Grid container justify="center" spacing={3}>
+      <Grid item xs={3}>
         <Product />
       </Grid>
-      <Grid item xs={4}>
+      <Grid item xs={3}>
         <Product />
       </Grid>
-      <Grid item xs={4}>
+      <Grid item xs={3}>
         <Product />
       </Grid>
-      <Grid item xs={4}>
+      <Grid item xs={3}>
+        <Product />
+      </Grid>
+      <Grid item xs={3}>
+        <Product />
+      </Grid>
+      <Grid item xs={3}>
+        <Product />
+      </Grid>
+      <Grid item xs={3}>
+        <Product />
+      </Grid>
+      <Grid item xs={3}>
         <Product />
       </Grid>
     </Grid>
