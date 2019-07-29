@@ -2,14 +2,23 @@ import React from 'react';
 
 import HomePage from './pages/HomePage';
 import MainPage from './pages/Mainpage/MainPage';
-
+import BestSeller from './pages/BestSeller/BestSeller';
+import Details from './pages/Details/Details';
+import { BrowserRouter, Route } from 'react-router-dom';
+import AppProvider from './services/AppContext';
 function App() {
   return (
     <div>
       {/* <HomePage /> */}
-      <MainPage>
-        <HomePage />
-      </MainPage>
+      <AppProvider>
+        <BrowserRouter>
+          <MainPage>
+            <Route path="/" exact component={HomePage}></Route>
+            <Route path="/bestseller" component={BestSeller}></Route>
+            <Route path="/details/:id" component={Details}></Route>
+          </MainPage>
+        </BrowserRouter>
+      </AppProvider>
     </div>
   );
 }

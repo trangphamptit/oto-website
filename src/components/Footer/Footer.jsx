@@ -17,15 +17,15 @@ export default function Footer() {
             <div className="footer-content">
               <div className="loc-address">
                 <span>
-                  <i class="fas fa-map-marker-alt"></i>
+                  <i className="fas fa-map-marker-alt"></i>
                   Your address goes here
                 </span>
                 <span>
-                  <i class="far fa-envelope"></i>
+                  <i className="far fa-envelope"></i>
                   Mail Us : info@example.com
                 </span>
                 <span>
-                  <i class="fas fa-phone"></i>
+                  <i className="fas fa-phone"></i>
                   Phone: + 00 123 456789 10
                 </span>
               </div>

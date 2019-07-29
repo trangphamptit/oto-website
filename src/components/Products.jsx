@@ -1,43 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Grid from '@material-ui/core/Grid';
-
+import { AppContext } from '../services/AppContext';
 import Product from './Product';
 
-export default function Products() {
+export default function Products(props) {
+  const { products } = useContext(AppContext);
+
+  console.log('products', products);
   return (
     <Grid container justify="center" spacing={3}>
-      <Grid item xs={3}>
-        <Product />
-      </Grid>
-      <Grid item xs={3}>
-        <Product />
-      </Grid>
-      <Grid item xs={3}>
-        <Product />
-      </Grid>
-      <Grid item xs={3}>
-        <Product />
-      </Grid>
-      <Grid item xs={3}>
-        <Product />
-      </Grid>
-      <Grid item xs={3}>
-        <Product />
-      </Grid>
-      <Grid item xs={3}>
-        <Product />
-      </Grid>
-      <Grid item xs={3}>
-        <Product />
-      </Grid>
+      {products.map((product, index) => (
+        <Grid item xs={3}>
+          <Product key={index} product={product} />
+        </Grid>
+      ))}
     </Grid>
-    /* <Grid container justify="center" spacing={spacing}> */
-    /* {[0, 1, 2].map(value => (
-            <Grid key={value} item>
-              <Paper className={classes.paper} />
-            </Grid>
-          ))} */
-
-    /* </Grid> */
   );
 }

@@ -7,7 +7,8 @@ import CardActions from '@material-ui/core/CardActions';
 import Typography from '@material-ui/core/Typography';
 import { red } from '@material-ui/core/colors';
 import Button from '@material-ui/core/Button';
-
+import { AppContext } from '../services/AppContext';
+import { Link } from 'react-router-dom';
 const useStyles = makeStyles(theme => ({
   card: {
     maxWidth: 345,
@@ -23,53 +24,58 @@ const useStyles = makeStyles(theme => ({
 
 export default function Product(props) {
   const classes = useStyles();
+  const { product } = props;
+  const { id, image, name, price } = product;
+  console.log('product', product);
   return (
     <Card className={classes.card}>
-      <CardMedia
-        className={classes.media}
-        image={props.image}
-        title="búa thoát hiểm đa năng"
-      />
-      <CardContent>
-        <Typography
-          variant="body2"
-          component="p"
-          align="center"
-          transform="capitalize"
-          color="black"
-        >
-          {props.productname}
-        </Typography>
-        <Typography
-          variant="body2"
-          color="textSecondary"
-          component="p"
-          align="center"
-        >
-          {props.discountprice} đ
-        </Typography>
-        <Typography
-          variant="body2"
-          color="textSecondary"
-          component="p"
-          align="center"
-          style={{ textDecoration: 'line-through' }}
-        >
-          {props.price} đ
-        </Typography>
-      </CardContent>
-      <CardActions disableSpacing className={classes.cardContent}>
-        <Button
-          variant="contained"
-          color="primary"
-          className={classes.button}
-          style={{
-            margin: 'auto',
-          }}
-        >
-          Add to cart
-        </Button>
-      </CardActions>
+      <Link to={`/details/${id}`}>
+        <CardMedia
+          className={classes.media}
+          image={image}
+          title="búa thoát hiểm đa năng"
+        />
+        <CardContent>
+          <Typography
+            variant="body2"
+            component="p"
+            align="center"
+            transform="capitalize"
+            color="black"
+          >
+            {name}
+          </Typography>
+          <Typography
+            variant="body2"
+            color="textSecondary"
+            component="p"
+            align="center"
+          >
+            {price} đ
+          </Typography>
+          <Typography
+            variant="body2"
+            color="textSecondary"
+            component="p"
+            align="center"
+            style={{ textDecoration: 'line-through' }}
+          >
+            {price} đ
+          </Typography>
+        </CardContent>
+        <CardActions disableSpacing className={classes.cardContent}>
+          <Button
+            variant="contained"
+            color="primary"
+            className={classes.button}
+            style={{
+              margin: 'auto',
+            }}
+          >
+            Add to cart
+          </Button>
+        </CardActions>
+      </Link>
     </Card>
   );
 }
