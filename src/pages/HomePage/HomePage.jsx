@@ -1,11 +1,10 @@
 import React from 'react';
-import Products from '../../components/Products';
-import Details from '../Details/Details';
+import Products from '../Products/Products';
+
 const HomePage = () => {
   return (
     <div>
-      {/* <Products /> */}
-      <Details />
+      <Products />
     </div>
   );
 };

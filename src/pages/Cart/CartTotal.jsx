@@ -1,6 +1,6 @@
 import React from 'react';
 import './CartTotal.scss';
-import Button from '../../components/Button';
+import Button from '../../components/Layout/Button/Button';
 export default function CartTotal() {
   return (
     <div className="cart-total">
