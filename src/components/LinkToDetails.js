@@ -4,7 +4,7 @@ import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import Breadcrumbs from '@material-ui/core/Breadcrumbs';
 import Link from '@material-ui/core/Link';
-
+import './LinkToDetails.scss';
 const useStyles = makeStyles(theme => ({
   root: {
     justifyContent: 'center',
@@ -20,7 +20,7 @@ function handleClick(event) {
   alert('You clicked a breadcrumb.');
 }
 
-export default function LinkToDetails() {
+export default function LinkToDetails(props) {
   const classes = useStyles();
 
   return (
@@ -31,7 +31,7 @@ export default function LinkToDetails() {
             Material-UI
           </Link>
 
-          <Typography color="textPrimary">Breadcrumb</Typography>
+          <Typography color="textPrimary">{props.productName}</Typography>
         </Breadcrumbs>
       </Paper>
     </div>

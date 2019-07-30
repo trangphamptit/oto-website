@@ -8,7 +8,7 @@ class Details extends Component {
   render() {
     return (
       <React.Fragment>
-        <LinkToDetails />
+        <LinkToDetails productName={'Acquiera mas'} />
         <br />
         <AppContext />
         <Grid container justify="center" spacing={2}>

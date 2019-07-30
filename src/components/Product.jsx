@@ -7,7 +7,6 @@ import CardActions from '@material-ui/core/CardActions';
 import Typography from '@material-ui/core/Typography';
 import { red } from '@material-ui/core/colors';
 import Button from '@material-ui/core/Button';
-import { AppContext } from '../services/AppContext';
 import { Link } from 'react-router-dom';
 const useStyles = makeStyles(theme => ({
   card: {

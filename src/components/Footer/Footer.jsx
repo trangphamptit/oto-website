@@ -9,7 +9,7 @@ const useStyles = makeStyles(theme => ({
 export default function Footer() {
   const classes = useStyles();
   return (
-    <React.Fragment>
+    <footer className="footer">
       <Grid container justify="center" spacing={2}>
         <Grid item xs={3}>
           <div className="single-footer">
@@ -92,6 +92,6 @@ export default function Footer() {
           </li>
         </ul>
       </div>
-    </React.Fragment>
+    </footer>
   );
 }

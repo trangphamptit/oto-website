@@ -5,7 +5,7 @@ import Footer from '../../components/Footer/Footer';
 class MainPage extends Component {
   render() {
     return (
-      <div>
+      <div className="mainpage">
         <Header />
         {this.props.children}
         <Footer />

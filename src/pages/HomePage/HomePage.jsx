@@ -4,8 +4,8 @@ import Details from '../Details/Details';
 const HomePage = () => {
   return (
     <div>
-      <Products />
-      {/* <Details /> */}
+      {/* <Products /> */}
+      <Details />
     </div>
   );
 };

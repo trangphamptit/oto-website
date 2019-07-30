@@ -178,14 +178,6 @@ export default function PrimarySearchAppBar() {
         </div>
         <Divider />
         <List>
-          {/* {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))} */}
           <ListItem button>
             <ListItemText>Home</ListItemText>
           </ListItem>
@@ -311,11 +303,14 @@ export default function PrimarySearchAppBar() {
           </div>
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
-            <IconButton aria-label="Show 4 new mails" color="inherit">
-              <Badge badgeContent={4} color="secondary">
-                <ShoppingCart />
-              </Badge>
-            </IconButton>
+            <Link to="/cart">
+              <IconButton aria-label="Show 4 new mails" color="inherit">
+                <Badge badgeContent={4} color="secondary">
+                  <ShoppingCart />
+                </Badge>
+              </IconButton>
+            </Link>
+
             <IconButton aria-label="Show 17 new notifications" color="inherit">
               <Badge badgeContent={17} color="secondary">
                 <NotificationsIcon />
