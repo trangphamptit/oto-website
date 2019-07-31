@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Products from './Data.js';
 import { getAllBrands } from './getbrands';
+import { getAllCategories } from './getcategories';
+
 export const AppContext = React.createContext();
 class AppProvider extends Component {
     constructor(props) {
@@ -11,6 +13,11 @@ class AppProvider extends Component {
             getBrands: async () => {
                 const brands = await getAllBrands();
                 this.setState({ brands });
+            },
+            categories: [],
+            getCategories: async () => {
+                const categories = await getAllCategories();
+                this.setState({ categories });
             },
         };
     }
