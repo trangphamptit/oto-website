@@ -1,20 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
 import Card from '@material-ui/core/Card';
 import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
-import CardActions from '@material-ui/core/CardActions';
 import Typography from '@material-ui/core/Typography';
 
 import Button from '@material-ui/core/Button';
 import { Link } from 'react-router-dom';
 import useStyles from './ProductStyle';
-
+import { AppContext } from '../services/AppContext';
 export default function Product(props) {
     const classes = useStyles();
     const { product } = props;
     const { id, image, name, price } = product;
-
+    const { addToCart } = useContext(AppContext);
     return (
         <Card className={classes.card}>
             <Link to={`/details/${id}`}>
@@ -51,19 +50,15 @@ export default function Product(props) {
                         {price} đ
                     </Typography>
                 </CardContent>
-                <CardActions disableSpacing className={classes.cardContent}>
-                    <Button
-                        variant="contained"
-                        color="primary"
-                        className={classes.button}
-                        style={{
-                            margin: 'auto',
-                        }}
-                    >
-                        Add to cart
-                    </Button>
-                </CardActions>
             </Link>
+            <Button
+                className={classes.button}
+                onClick={() => {
+                    addToCart(product);
+                }}
+            >
+                Add to cart
+            </Button>
         </Card>
     );
 }

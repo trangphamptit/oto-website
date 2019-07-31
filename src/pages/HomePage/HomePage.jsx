@@ -6,11 +6,11 @@ import Categories from '../../components/Categories/Categories';
 const HomePage = () => {
     return (
         <Grid container justify="center">
-            <Grid xs={3}>
+            <Grid item xs={3}>
                 <Brands />
                 <Categories />
             </Grid>
-            <Grid xs={9}>
+            <Grid item xs={9}>
                 <HomeContent />
             </Grid>
         </Grid>

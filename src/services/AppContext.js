@@ -10,11 +10,13 @@ class AppProvider extends Component {
         this.state = {
             products: Products,
             brands: [],
+            categories: [],
+            cart: [],
             getBrands: async () => {
                 const brands = await getAllBrands();
                 this.setState({ brands });
             },
-            categories: [],
+
             getCategories: async () => {
                 const categories = await getAllCategories();
                 this.setState({ categories });
@@ -22,9 +24,17 @@ class AppProvider extends Component {
         };
     }
 
+    addToCart = product => {
+        this.setState({ cart: this.state.cart.concat(product) });
+        console.log('cart', this.state.cart);
+    };
+
+    increment = cart => {};
     render() {
         return (
-            <AppContext.Provider value={{ ...this.state }}>
+            <AppContext.Provider
+                value={{ ...this.state, addToCart: this.addToCart }}
+            >
                 {this.props.children}
             </AppContext.Provider>
         );

@@ -5,6 +5,8 @@ const useStyles = makeStyles(theme => ({
     card: {
         maxWidth: 345,
         margin: '15px',
+        position: 'relative',
+        paddingBottom: '30px',
     },
     media: {
         height: 0,
@@ -15,6 +17,9 @@ const useStyles = makeStyles(theme => ({
     },
     button: {
         backgroundColor: lightGreen[500],
+        position: 'absolute',
+        width: '100%',
+        paddingBottom: '15px',
     },
 }));
 export default useStyles;

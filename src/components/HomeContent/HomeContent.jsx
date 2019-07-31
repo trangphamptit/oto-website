@@ -6,11 +6,10 @@ import Grid from '@material-ui/core/Grid';
 export default function HomeContent() {
     const { products } = useContext(AppContext);
     return (
-        <Grid className="homecontent" spacing={3}>
-            {/* <Products /> */}
+        <Grid container className="homecontent" spacing={3}>
             <div className="homecontent-container">
                 {products.map((product, index) => (
-                    <Grid xs={3}>
+                    <Grid item xs={3}>
                         <Product key={index} product={product} />
                     </Grid>
                 ))}
