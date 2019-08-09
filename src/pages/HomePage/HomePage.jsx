@@ -3,6 +3,7 @@ import Grid from '@material-ui/core/Grid';
 import Brands from '../../components/Brands/Brands';
 import HomeContent from '../../components/HomeContent/HomeContent';
 import Categories from '../../components/Categories/Categories';
+import Products from '../../pages/Products/Products';
 const HomePage = () => {
     return (
         <Grid container justify="center">
@@ -11,7 +12,7 @@ const HomePage = () => {
                 <Categories />
             </Grid>
             <Grid item xs={9}>
-                <HomeContent />
+                <Products />
             </Grid>
         </Grid>
     );

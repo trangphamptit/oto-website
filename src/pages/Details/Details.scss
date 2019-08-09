@@ -1,10 +1,15 @@
 .product-price {
-  margin-bottom: 10px;
+    margin-bottom: 10px;
 }
 .price {
-  font-weight: bold;
+    font-weight: bold;
 }
 .prev-price {
-  text-decoration: line-through;
-  margin-left: 10px;
+    text-decoration: line-through;
+    margin-left: 10px;
+}
+.details-img {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
 }

@@ -1,17 +1,21 @@
-import React, { useContext } from 'react';
-import Grid from '@material-ui/core/Grid';
+import React, { useContext, useEffect } from 'react';
 import { AppContext } from '../../services/AppContext';
 import Product from '../../components/Product';
-
+import './Products.scss';
 export default function Products(props) {
-    const { products } = useContext(AppContext);
+    const { products, getProducts } = useContext(AppContext);
+    useEffect(() => {
+        getProducts();
+    }, []);
+    // console.log('products', products);
     return (
-        <Grid container justify="center" spacing={3}>
-            {products.map((product, index) => (
-                <Grid item xs={3}>
+        <section className="section">
+            <h1 className="section-heading">Danh Sách Sản Phẩm</h1>
+            <div className="row">
+                {products.map((product, index) => (
                     <Product key={index} product={product} />
-                </Grid>
-            ))}
-        </Grid>
+                ))}
+            </div>
+        </section>
     );
 }

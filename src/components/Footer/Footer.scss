@@ -1,47 +1,49 @@
 .footer {
-  background-color: white;
-  margin-top: 15px;
-  padding: 15px;
+    background-color: black;
+    margin-top: 15px;
+    padding: 15px;
+    color: white;
+    opacity: 0.8;
 }
 .single-footer h3 {
-  font-size: 18px;
-  font-weight: 500;
-  margin-bottom: 28px;
-  text-transform: capitalize;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 28px;
+    text-transform: capitalize;
 }
 
 .footer-content span {
-  display: flex;
-  i {
-    font-size: 18px;
-    width: 30px;
-    text-align: center;
-    margin-right: 5px;
-    margin-top: 2px;
-  }
+    display: flex;
+    i {
+        font-size: 18px;
+        width: 30px;
+        text-align: center;
+        margin-right: 5px;
+        margin-top: 2px;
+    }
 }
 .payment-method img {
-  max-width: 100%;
+    max-width: 100%;
 }
 .footer-bottom-content {
-  display: flex;
-  justify-content: space-between;
-  height: 50px;
-  align-items: center;
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+    align-items: center;
 }
 .footer-bottom-content .social-media {
-  display: flex;
+    display: flex;
 }
 .footer-bottom-content .social-media li {
-  margin-right: 15px;
-  display: inline-block;
-  i {
-    border-radius: 5px;
-    color: #555;
-    display: block;
-    line-height: 43px;
-    padding: 0 3px;
-    text-align: center;
-    text-decoration: none;
-  }
+    margin-right: 15px;
+    display: inline-block;
+    i {
+        border-radius: 5px;
+        color: #555;
+        display: block;
+        line-height: 43px;
+        padding: 0 3px;
+        text-align: center;
+        text-decoration: none;
+    }
 }

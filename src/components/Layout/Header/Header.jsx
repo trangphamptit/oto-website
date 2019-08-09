@@ -126,8 +126,12 @@ export default function PrimarySearchAppBar() {
             keepMounted
             transformOrigin={{ vertical: 'top', horizontal: 'right' }}
         >
-            <MenuItem onClick={onClose}>Profile</MenuItem>
-            <MenuItem onClick={onClose}>My account</MenuItem>
+            <MenuItem onClick={onClose}>
+                <Link to="/login">Đăng nhập</Link>
+            </MenuItem>
+            <MenuItem onClick={onClose}>
+                <Link to="/signup">Đăng ký</Link>
+            </MenuItem>
         </Menu>
     );
 
@@ -183,7 +187,7 @@ export default function PrimarySearchAppBar() {
 
     return (
         <div>
-            <AppBar position="static">
+            <AppBar position="static" className={classes.appbar}>
                 <Toolbar>
                     <IconButton
                         edge="start"
@@ -195,7 +199,7 @@ export default function PrimarySearchAppBar() {
                         <MenuIcon />
                     </IconButton>
                     <Typography className={classes.title} variant="h6" noWrap>
-                        Hello
+                        VN ÔTÔ
                     </Typography>
                     <div className={classes.search}>
                         <div className={classes.searchIcon}>

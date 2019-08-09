@@ -5,6 +5,7 @@ import Product from '../Product';
 import Grid from '@material-ui/core/Grid';
 export default function HomeContent() {
     const { products } = useContext(AppContext);
+    console.log('products', products);
     return (
         <Grid container className="homecontent" spacing={3}>
             <div className="homecontent-container">
