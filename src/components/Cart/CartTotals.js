@@ -3,7 +3,6 @@ import React, { useContext } from 'react';
 import { AppContext } from '../../services/AppContext';
 import { withRouter } from 'react-router-dom';
 const checkLogin = props => {
-    // console.log('props', props);
     let user = localStorage.getItem('user');
     if (user) {
         props.history.push('/checkout');

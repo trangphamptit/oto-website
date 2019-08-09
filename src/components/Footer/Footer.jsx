@@ -16,10 +16,6 @@ export default function Footer() {
                         <h3>Liên hệ </h3>
                         <div className="footer-content">
                             <div className="loc-address">
-                                {/* <span>
-                                    <i className="fas fa-map-marker-alt"></i>
-                                    Your address goes here
-                                </span> */}
                                 <span>
                                     <i className="far fa-envelope"></i>
                                     Email : info@example.com
@@ -39,7 +35,6 @@ export default function Footer() {
                             <ul className="footer-list">
                                 <li>Giới thiệu</li>
                                 <li>Tuyển dụng</li>
-                                {/* <li>Privacy Policy</li> */}
                             </ul>
                         </div>
                     </div>

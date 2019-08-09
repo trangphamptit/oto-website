@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Products from './Data.js';
+
 import { getAllBrands } from './getbrands';
 import { getAllCategories } from './getcategories';
 import { getAllProducts } from './getproducts';
@@ -30,27 +30,28 @@ class AppProvider extends Component {
         };
     }
 
-    addToCart = id => {
-        id.cartQuantity = 1;
-        this.setState({ cart: this.state.cart.concat(id) });
+    addToCart = item => {
+        item.cartQuantity = 1;
+        this.setState({ cart: this.state.cart.concat(item) });
         this.openModal();
         console.log('cart', this.state.cart);
     };
 
     increment = item => {
         let tempCart = [...this.state.cart];
+
         let index = tempCart.indexOf(item);
         tempCart[index].cartQuantity += 1;
-
+        console.log('temp', tempCart);
         this.setState({ cart: [...tempCart] });
-        console.log('hi', tempCart[index].cartQuantity);
+        console.log('hi', this.state.cart);
     };
     decrement = item => {
         let tempCart = [...this.state.cart];
         let index = tempCart.indexOf(item);
         tempCart[index].cartQuantity -= 1;
         this.setState({ cart: [...tempCart] });
-        console.log('hi', tempCart[index].cartQuantity);
+        console.log('hi', this.state.cart);
     };
 
     removeItem = _id => {

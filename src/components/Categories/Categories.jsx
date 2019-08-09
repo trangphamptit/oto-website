@@ -11,7 +11,6 @@ export default function Categories() {
     useEffect(() => {
         getCategories();
     }, []);
-    // console.log('brands', brands);
     return (
         <div className="brands-table-container">
             <List>

@@ -11,7 +11,7 @@ export default function Brands() {
     useEffect(() => {
         getBrands();
     }, []);
-    // console.log('brands', brands);
+
     return (
         <div className="brands-table-container">
             <List>
